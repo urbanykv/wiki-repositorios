@@ -44,8 +44,6 @@ const Home = () => {
     const [ data, setData] = useState(null);
 
     const [ dataRepo, setDataRepo] = useState(null);
-
-    console.log(dataRepo);
     
     useEffect(() => {
         fetch(url, {
@@ -63,8 +61,6 @@ const Home = () => {
             headers: { "Authorization": githubToken }
         }).then( response => response.json()).then( repositorios => setDataRepo(repositorios))
     }, [urlRepo, githubToken])
-
-    console.log(data);
 
     return(
         <HomeContainer>
@@ -85,7 +81,6 @@ const Home = () => {
                 <Button />
             </FormContainer>
             <hr/>
-
             <RepoTitle>
                 <h1>Repositórios</h1>
                 <span>{dataRepo?.length}</span>

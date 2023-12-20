@@ -5,8 +5,6 @@ const ListRepo = ({ repositorios }) => {
 
     const verificarRepositorios = repositorios && repositorios.length > 0;
 
-
-    console.log(repositorios);
     return(
         <ListRepoContainer display={verificarRepositorios}>
 
