@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputContainer = styled.div`
     width: 280px;
-    height: 70px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@ export const Input = styled.input`
     width: 280px;
     height: 35px;
     color: #fff;
-    padding: 0 15px;
+    padding: 7px 15px;
     font-size: 18px;
 
     &:focus{
@@ -25,8 +25,24 @@ export const Input = styled.input`
     }
 `
 
+export const RowContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+`
+
 export const TitleInput = styled.label`
     color: white;
     font-weight: 600;
     font-size: 20px;
+`
+
+export const Alerta = styled.span`
+    color: red;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px 0 0;
 `

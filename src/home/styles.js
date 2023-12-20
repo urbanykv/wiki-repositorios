@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #010409;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 15px;
+    padding: 60px 0;
 
     & hr{
         width: 35%;
@@ -20,7 +21,7 @@ export const HomeContainer = styled.main`
 
 export const FormContainer = styled.form`
     width: 320px;
-    height: 320px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
