@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-color: #010409;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,8 @@ export const HomeContainer = styled.main`
         border: none;
         background-color: #ffffff11;
     }
+
+
 `
 
 export const FormContainer = styled.form`
@@ -27,4 +29,22 @@ export const FormContainer = styled.form`
     justify-content: center;
     align-items: center;
     gap: 15px;
+`
+
+export const RepoTitle = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+
+
+    & h1{
+        font-size: 18px;    
+        color: #fff;
+    }
+
+    & span{
+        font-size: 16px;
+        color: #ffffff50;
+    }
 `

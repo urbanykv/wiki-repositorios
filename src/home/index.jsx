@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { control, useForm } from "react-hook-form";
 import Button from "../components/Button";
-import { FormContainer, HomeContainer } from "./styles";
+import { FormContainer, HomeContainer, RepoTitle } from "./styles";
 import ListRepo from "../components/ListaRepo";
 import InputComponent from "../components/Input";
 import Perfil from "../components/Perfil";
@@ -16,7 +16,7 @@ const schema = yup
   .required()
 
 const Home = () => {
-    const githubToken = process.env.GITHUB_TOKEN;
+    const githubToken = process.env.TOKEN_GITHUB;
 
     const { 
         control, 
@@ -31,10 +31,6 @@ const Home = () => {
         setUrlRepo(`https://api.github.com/users/${dataForm.perfil}/repos`)
         
         setDadosForm(dataForm)
-
-        fetch( urlRepo, {
-            headers: { "Authorization": githubToken }
-        }).then( response => response.json()).then( repositorios => setDataRepo(repositorios))
     };
 
     const [ url, setUrl ] = useState(null);
@@ -62,6 +58,12 @@ const Home = () => {
         }
     }, [url, data?.name, dadosForm?.perfil.length, githubToken]);
 
+    useEffect(() => {
+        fetch( urlRepo, {
+            headers: { "Authorization": githubToken }
+        }).then( response => response.json()).then( repositorios => setDataRepo(repositorios))
+    }, [urlRepo, githubToken])
+
     console.log(data);
 
     return(
@@ -83,6 +85,11 @@ const Home = () => {
                 <Button />
             </FormContainer>
             <hr/>
+
+            <RepoTitle>
+                <h1>Repositórios</h1>
+                <span>{dataRepo?.length}</span>
+            </RepoTitle>
             <ListRepo repositorios={dataRepo}/>
         </HomeContainer>
     );
